@@ -28,15 +28,20 @@ function init() {
   // 3 - Show error messages
   // This is cleaner and also removes code duplications
   convertButton.addEventListener('click', function() {
-    var inputValue = inputArea.value;
-    var convertion = modeCheckbox.checked ? convertIntegerToRoman(inputValue) : convertRomanToInteger(inputValue);
-    if (convertion.result) {
-      outputArea.innerHTML = convertion.value;
+  var inputValue = inputArea.value;
+  var convertion = modeCheckbox.checked ? convertIntegerToRoman(inputValue) : convertRomanToInteger(inputValue);
   
-    } else {
-      alert(convertion.message);
-    }
-  });
+  if (convertion.result) {
+    outputArea.innerHTML = convertion.value;
+    
+    // Add the Google Analytics event tracking
+    gtag('event', 'conversion_done', {
+      'conversion_type': modeCheckbox.checked ? 'integer_to_roman' : 'roman_to_integer'
+    });
+  } else {
+    alert(convertion.message);
+  }
+});
 
 }
 
