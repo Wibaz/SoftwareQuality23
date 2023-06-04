@@ -33,14 +33,7 @@ function init() {
   
   if (convertion.result) {
     outputArea.innerHTML = convertion.value;
-    
-    // Add the Google Analytics event tracking
-    gtag('event', 'conversion_done', {
-      'conversion_type': modeCheckbox.checked ? 'integer_to_roman' : 'roman_to_integer'
-    });
-  } else {
-    alert(convertion.message);
-  }
+    }
 });
 
 }
