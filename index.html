@@ -12,15 +12,6 @@
   gtag('js', new Date());
 
   gtag('config', 'G-Y57FB7ZN2Z');
-
-  // Add the gtag function to recopilate the data
-  const convertBtn = document.querySelector('.convert-button');
-  convertBtn.addEventListener('click', function() {
-    gtag('event', 'conversion_type', {
-      // Add the conversion type
-      'conversion_type': document.getElementById('mode-selector').checked ? 'integer_to_roman' : 'roman_to_integer'
-    });
-  });
 </script>
     <script src="romans.js"></script>
     <link rel="stylesheet" href="romans.css">
@@ -37,7 +28,7 @@
           <label for="conversion-input"></label>
           <input type="text" id="conversion-input" name="conversion-input" placeholder="Enter a roman numeral" />
         </div>
-        <span class="convert-button">Convert</span>
+        <span class="convert-button"  onclick='javascript:showResult()'>Convert</span>
         <p class="convert-output"></p>
       </section>
     </main>

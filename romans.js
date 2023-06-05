@@ -27,16 +27,36 @@ function init() {
   // 2 - Write the UI output (outputArea.innerHTML)
   // 3 - Show error messages
   // This is cleaner and also removes code duplications
-  convertButton.addEventListener('click', function() {
-    var inputValue = inputArea.value;
+  // convertButton.addEventListener('click', function() {
+  //   var inputValue = inputArea.value;
+  //   var convertion = modeCheckbox.checked ? convertIntegerToRoman(inputValue) : convertRomanToInteger(inputValue);
+  //   if (convertion.result) {
+  //     outputArea.innerHTML = convertion.value;
+  //     // Add the gtag function to recopilate the data
+  //     gtag('event', 'conversion_type', {
+  //       // Add the conversion type
+  //       'conversion_type': document.getElementById('mode-selector').checked ? 'integer_to_roman' : 'roman_to_integer'
+  //     });
+  //   } else {
+  //     alert(convertion.message);
+  //   }
+  // });
+
+}
+
+const showResult = function() {
+  var inputValue = inputArea.value;
     var convertion = modeCheckbox.checked ? convertIntegerToRoman(inputValue) : convertRomanToInteger(inputValue);
     if (convertion.result) {
       outputArea.innerHTML = convertion.value;
+      // Add the gtag function to recopilate the data
+      gtag('event', 'conversion_type', {
+        // Add the conversion type
+        'conversion_type': document.getElementById('mode-selector').checked ? 'integer_to_roman' : 'roman_to_integer'
+      });
     } else {
       alert(convertion.message);
     }
-  });
-
 }
 
 // Now the convertion methods receive both an input argument instead
