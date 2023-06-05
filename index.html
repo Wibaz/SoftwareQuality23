@@ -12,6 +12,11 @@
      gtag('js', new Date());
 
       gtag('config', 'G-7DYM7V4HYL');
+      
+      // Add the gtag function to recopilate the data
+      gtag('event', 'conversion', {
+    'conversion_type': document.getElementById('mode-selector').checked ? 'integer_to_roman' : 'roman_to_integer'
+  });
     </script>
     <script src="romans.js"></script>
     <link rel="stylesheet" href="romans.css">

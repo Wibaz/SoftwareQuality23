@@ -32,12 +32,6 @@ function init() {
     var convertion = modeCheckbox.checked ? convertIntegerToRoman(inputValue) : convertRomanToInteger(inputValue);
     if (convertion.result) {
       outputArea.innerHTML = convertion.value;
-
-      // Add the gtag function to recopilate the data
-      gtag('event', 'conversion', {
-        'conversion_type': modeCheckbox.checked ? 'integer_to_roman' : 'roman_to_integer'
-      });
-      
     } else {
       alert(convertion.message);
     }
