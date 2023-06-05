@@ -5,25 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Roman To Integer</title>
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7DYM7V4HYL"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-     gtag('js', new Date());
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Y57FB7ZN2Z"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-      gtag('config', 'G-7DYM7V4HYL');
-      
-      // Add the gtag function to recopilate the data
-      const convertBtn = document.getElementById('convert-btn');
+  gtag('config', 'G-Y57FB7ZN2Z');
+
+  // Add the gtag function to recopilate the data
+  const convertBtn = document.querySelector('.convert-button');
   convertBtn.addEventListener('click', function() {
-    gtag('event', 'conversion', {
-      'send_to': 'G-7DYM7V4HYL',
-
+    gtag('event', 'conversion_type', {
       // Add the conversion type
       'conversion_type': document.getElementById('mode-selector').checked ? 'integer_to_roman' : 'roman_to_integer'
     });
   });
-    </script>
+</script>
     <script src="romans.js"></script>
     <link rel="stylesheet" href="romans.css">
   </head>
