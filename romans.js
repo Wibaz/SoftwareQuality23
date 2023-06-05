@@ -44,17 +44,17 @@ function init() {
 
   const showResult = function() {
     var inputValue = inputArea.value;
-      var convertion = modeCheckbox.checked ? convertIntegerToRoman(inputValue) : convertRomanToInteger(inputValue);
-      if (convertion.result) {
-        outputArea.innerHTML = convertion.value;
-        // Add the gtag function to recopilate the data
-        gtag('event', 'conversion_type', {
-          // Add the conversion type
-          'conversion_type': document.getElementById('mode-selector').checked ? 'integer_to_roman' : 'roman_to_integer'
-        });
-      } else {
-        alert(convertion.message);
-      }
+    var convertion = modeCheckbox.checked ? convertIntegerToRoman(inputValue) : convertRomanToInteger(inputValue);
+    if (convertion.result) {
+      outputArea.innerHTML = convertion.value;
+      // Add the gtag function to recopilate the data
+      gtag('event', 'conversion_type', {
+        // Add the conversion type
+        'conversion_type': document.getElementById('mode-selector').checked ? 'integer_to_roman' : 'roman_to_integer'
+      });
+    } else {
+      alert(convertion.message);
+    }
   }
 
 }
