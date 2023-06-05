@@ -9,9 +9,6 @@ function init() {
   var modeCheckbox = document.querySelector('input[type=\'checkbox\']');
   var header = document.querySelector('h1');
   var convertButton = document.querySelector('.convert-button');
-  var outputArea = document.querySelector('.convert-output');
-  var inputArea = document.querySelector('input[type=\'text\']');
-
 
   modeCheckbox.addEventListener('change', function(e) {
     header.innerHTML = getModeTitle(e.target.checked);
@@ -41,22 +38,6 @@ function init() {
   //     alert(convertion.message);
   //   }
   // });
-
-  const showResult = function() {
-    var inputValue = inputArea.value;
-    var convertion = modeCheckbox.checked ? convertIntegerToRoman(inputValue) : convertRomanToInteger(inputValue);
-    if (convertion.result) {
-      outputArea.innerHTML = convertion.value;
-      // Add the gtag function to recopilate the data
-      gtag('event', 'conversion_type', {
-        // Add the conversion type
-        'conversion_type': document.getElementById('mode-selector').checked ? 'integer_to_roman' : 'roman_to_integer'
-      });
-    } else {
-      alert(convertion.message);
-    }
-  }
-
 }
 
 // Now the convertion methods receive both an input argument instead

@@ -15,6 +15,24 @@
 </script>
     <script src="romans.js"></script>
     <link rel="stylesheet" href="romans.css">
+    <script>
+      function showResult() {
+        var outputArea = document.querySelector('.convert-output');
+        var inputArea = document.querySelector('input[type=\'text\']');
+        var inputValue = inputArea.value;
+        var convertion = modeCheckbox.checked ? convertIntegerToRoman(inputValue) : convertRomanToInteger(inputValue);
+        if (convertion.result) {
+          outputArea.innerHTML = convertion.value;
+          // Add the gtag function to recopilate the data
+          gtag('event', 'conversion_type', {
+            // Add the conversion type
+            'conversion_type': document.getElementById('mode-selector').checked ? 'integer_to_roman' : 'roman_to_integer'
+          });
+        } else {
+          alert(convertion.message);
+        }
+      };
+    </script>
   </head>
   <body onload="init()">
     <main class="container">
