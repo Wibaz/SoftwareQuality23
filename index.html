@@ -17,6 +17,8 @@
       const convertBtn = document.getElementById('convert-btn');
   convertBtn.addEventListener('click', function() {
     gtag('event', 'conversion', {
+      'send_to': 'G-7DYM7V4HYL',
+
       // Add the conversion type
       'conversion_type': document.getElementById('mode-selector').checked ? 'integer_to_roman' : 'roman_to_integer'
     });
