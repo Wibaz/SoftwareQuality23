@@ -19,6 +19,7 @@
       function showResult() {
         var outputArea = document.querySelector('.convert-output');
         var inputArea = document.querySelector('input[type=\'text\']');
+        var modeCheckbox = document.querySelector('input[type=\'checkbox\']');
         var inputValue = inputArea.value;
         var convertion = modeCheckbox.checked ? convertIntegerToRoman(inputValue) : convertRomanToInteger(inputValue);
         if (convertion.result) {
